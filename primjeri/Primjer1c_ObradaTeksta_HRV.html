@@ -3121,9 +3121,9 @@ vertical-align: -.125em;
 </section>
 <section id="unos-teksta" class="level2">
 <h2 class="anchored" data-anchor-id="unos-teksta">Unos teksta</h2>
-<p>U ovom primjeru obradit ćemo dva “dokumenta”. Tekstovi su pohranjeni u varijablu pod nazivom <strong>text</strong>. Izvor tekstova: <a href="https://www.bild.de/" class="uri">https://www.bild.de/</a></p>
+<p>U ovom primjeru obradit ćemo dva “dokumenta”. Tekstovi su pohranjeni u varijablu pod nazivom <strong>text</strong>. Izvor tekstova: <a href="https://www.monitor.hr/" class="uri">https://www.monitor.hr/</a></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>text_deu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;In Zigaretten stecken über 7000 verschiedene chemische Substanzen. Darunter Hunderte giftige und krebserregende Stoffe. Der bekannteste: Nikotin. Das Nervengift erhöht den Blutdruck, die Herzfrequenz, verengt die Blutgefäße und reduziert die Sauerstoff-Versorgung. Das ist schlecht für alle Organe, aber ganz besonders auch für die Haut.&quot;</span>, <span class="st">&quot;Sind Investments in Immobilien eine gute Anlage? Ja, wenn die Bauzinsen niedrig sind und sich das Objekt in gefragter Lage befindet. Doch die Zinsen sind deutlich gestiegen, die Kaufpreise an Top-Standorten ohnehin. Trotzdem werden Kunden im Internet gelockt: Immo-Kauf ohne Eigenkapital mache angeblich keinerlei Probleme. BILD sprach mit einem Experten – ein Bauingenieur und Projektentwickler: Diese 9 Fehler sind Todsünden beim Immobilien-Kauf. Wenn Sie diese Fehler nicht machen, sparen Sie viel Geld.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>text_hrv <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Netko je došao na genijalnu ideju – postupak koji rješava najveći problem čovječanstva, naime kako ukloniti višak ugljikova dioksida iz atmosfere te tako spasiti rodni nam planet od uništenja, od posvemašne propasti. Sav ugljikov dioksid treba, kaže, otopiti u vodi, a dobivenu otopinu – soda-vodu – piti i popiti! U kombinaciji s vinom, što ne bi činilo popularni gemišt, već – špricer! No, tako što trpjeti i pretrpjeti bilo bi posve uzaludno, jer – znamo – ugljikov dioksid će kad-tad izaći iz našeg tijela (jer ne asimiliramo poput biljaka), pa će se vratiti u zrak.&quot;</span>, <span class="st">&quot;Nova istraživanja pokazuju da igranje videoigara može povećati IQ kod djece. Devetogodišnjaci koji su dvije godine igrali više od vršnjaka ostvarili su rast inteligencije od 2,5 IQ boda, dok gledanje televizije i korištenje društvenih mreža nisu imale utjecaj.&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Tekst koji je spremljen u varijablu <strong>text</strong> izgleda ovako:</p>
 <div class="cell">
@@ -3131,7 +3131,7 @@ vertical-align: -.125em;
 <div class="cell-output cell-output-stdout">
 <pre><code>function (x, ...) 
 UseMethod(&quot;text&quot;)
-&lt;bytecode: 0x000002112bd70380&gt;
+&lt;bytecode: 0x0000028968d68380&gt;
 &lt;environment: namespace:graphics&gt;</code></pre>
 </div>
 </div>
@@ -3140,7 +3140,7 @@ UseMethod(&quot;text&quot;)
 <h2 class="anchored" data-anchor-id="priprema-teksta">Priprema teksta</h2>
 <p>Da bi se lakše moglo obrađivati tekst potrebno ga je prebaciti u tablični format (engl. <em>data frame</em>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>text_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">doc =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">text =</span> text_deu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>text_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">doc =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">text =</span> text_hrv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Tekst pohranjen u tabličnom formatu sada izgleda ovako:</p>
 <div class="cell">
@@ -3161,11 +3161,11 @@ UseMethod(&quot;text&quot;)
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">In Zigaretten stecken über 7000 verschiedene chemische Substanzen. Darunter Hunderte giftige und krebserregende Stoffe. Der bekannteste: Nikotin. Das Nervengift erhöht den Blutdruck, die Herzfrequenz, verengt die Blutgefäße und reduziert die Sauerstoff-Versorgung. Das ist schlecht für alle Organe, aber ganz besonders auch für die Haut.</td>
+<td style="text-align: left;">Netko je došao na genijalnu ideju – postupak koji rješava najveći problem čovječanstva, naime kako ukloniti višak ugljikova dioksida iz atmosfere te tako spasiti rodni nam planet od uništenja, od posvemašne propasti. Sav ugljikov dioksid treba, kaže, otopiti u vodi, a dobivenu otopinu – soda-vodu – piti i popiti! U kombinaciji s vinom, što ne bi činilo popularni gemišt, već – špricer! No, tako što trpjeti i pretrpjeti bilo bi posve uzaludno, jer – znamo – ugljikov dioksid će kad-tad izaći iz našeg tijela (jer ne asimiliramo poput biljaka), pa će se vratiti u zrak.</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">Sind Investments in Immobilien eine gute Anlage? Ja, wenn die Bauzinsen niedrig sind und sich das Objekt in gefragter Lage befindet. Doch die Zinsen sind deutlich gestiegen, die Kaufpreise an Top-Standorten ohnehin. Trotzdem werden Kunden im Internet gelockt: Immo-Kauf ohne Eigenkapital mache angeblich keinerlei Probleme. BILD sprach mit einem Experten – ein Bauingenieur und Projektentwickler: Diese 9 Fehler sind Todsünden beim Immobilien-Kauf. Wenn Sie diese Fehler nicht machen, sparen Sie viel Geld.</td>
+<td style="text-align: left;">Nova istraživanja pokazuju da igranje videoigara može povećati IQ kod djece. Devetogodišnjaci koji su dvije godine igrali više od vršnjaka ostvarili su rast inteligencije od 2,5 IQ boda, dok gledanje televizije i korištenje društvenih mreža nisu imale utjecaj.</td>
 </tr>
 </tbody>
 </table>
@@ -3182,8 +3182,8 @@ UseMethod(&quot;text&quot;)
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>myCorpus<span class="sc">$</span>content</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;in zigaretten stecken über 7000 verschiedene chemische substanzen. darunter hunderte giftige und krebserregende stoffe. der bekannteste: nikotin. das nervengift erhöht den blutdruck, die herzfrequenz, verengt die blutgefäße und reduziert die sauerstoff-versorgung. das ist schlecht für alle organe, aber ganz besonders auch für die haut.&quot;                                                                                                                                                                         
-[2] &quot;sind investments in immobilien eine gute anlage? ja, wenn die bauzinsen niedrig sind und sich das objekt in gefragter lage befindet. doch die zinsen sind deutlich gestiegen, die kaufpreise an top-standorten ohnehin. trotzdem werden kunden im internet gelockt: immo-kauf ohne eigenkapital mache angeblich keinerlei probleme. bild sprach mit einem experten – ein bauingenieur und projektentwickler: diese 9 fehler sind todsünden beim immobilien-kauf. wenn sie diese fehler nicht machen, sparen sie viel geld.&quot;</code></pre>
+<pre><code>[1] &quot;netko je došao na genijalnu ideju – postupak koji rješava najveći problem čovječanstva, naime kako ukloniti višak ugljikova dioksida iz atmosfere te tako spasiti rodni nam planet od uništenja, od posvemašne propasti. sav ugljikov dioksid treba, kaže, otopiti u vodi, a dobivenu otopinu – soda-vodu – piti i popiti! u kombinaciji s vinom, što ne bi činilo popularni gemišt, već – špricer! no, tako što trpjeti i pretrpjeti bilo bi posve uzaludno, jer – znamo – ugljikov dioksid će kad-tad izaći iz našeg tijela (jer ne asimiliramo poput biljaka), pa će se vratiti u zrak.&quot;
+[2] &quot;nova istraživanja pokazuju da igranje videoigara može povećati iq kod djece. devetogodišnjaci koji su dvije godine igrali više od vršnjaka ostvarili su rast inteligencije od 2,5 iq boda, dok gledanje televizije i korištenje društvenih mreža nisu imale utjecaj.&quot;                                                                                                                                                                                                                                                                                                                      </code></pre>
 </div>
 </div>
 </section>
@@ -3194,92 +3194,81 @@ UseMethod(&quot;text&quot;)
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>myCorpus<span class="sc">$</span>content</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;in zigaretten stecken über 7000 verschiedene chemische substanzen darunter hunderte giftige und krebserregende stoffe der bekannteste nikotin das nervengift erhöht den blutdruck die herzfrequenz verengt die blutgefäße und reduziert die sauerstoffversorgung das ist schlecht für alle organe aber ganz besonders auch für die haut&quot;                                                                                                                                                                     
-[2] &quot;sind investments in immobilien eine gute anlage ja wenn die bauzinsen niedrig sind und sich das objekt in gefragter lage befindet doch die zinsen sind deutlich gestiegen die kaufpreise an topstandorten ohnehin trotzdem werden kunden im internet gelockt immokauf ohne eigenkapital mache angeblich keinerlei probleme bild sprach mit einem experten – ein bauingenieur und projektentwickler diese 9 fehler sind todsünden beim immobilienkauf wenn sie diese fehler nicht machen sparen sie viel geld&quot;</code></pre>
+<pre><code>[1] &quot;netko je došao na genijalnu ideju – postupak koji rješava najveći problem čovječanstva naime kako ukloniti višak ugljikova dioksida iz atmosfere te tako spasiti rodni nam planet od uništenja od posvemašne propasti sav ugljikov dioksid treba kaže otopiti u vodi a dobivenu otopinu – sodavodu – piti i popiti u kombinaciji s vinom što ne bi činilo popularni gemišt već – špricer no tako što trpjeti i pretrpjeti bilo bi posve uzaludno jer – znamo – ugljikov dioksid će kadtad izaći iz našeg tijela jer ne asimiliramo poput biljaka pa će se vratiti u zrak&quot;
+[2] &quot;nova istraživanja pokazuju da igranje videoigara može povećati iq kod djece devetogodišnjaci koji su dvije godine igrali više od vršnjaka ostvarili su rast inteligencije od 25 iq boda dok gledanje televizije i korištenje društvenih mreža nisu imale utjecaj&quot;                                                                                                                                                                                                                                                                                                        </code></pre>
 </div>
 </div>
 </section>
 <section id="obrada-teksta-34-uklanjanje-stop-riječi" class="level2">
 <h2 class="anchored" data-anchor-id="obrada-teksta-34-uklanjanje-stop-riječi">Obrada teksta (3/4): Uklanjanje stop riječi</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>myCorpus <span class="ot">&lt;-</span> <span class="fu">tm_map</span>(myCorpus, removeWords, <span class="fu">stopwords</span>(<span class="st">&quot;german&quot;</span>)) </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>myCorpus<span class="sc">$</span>content</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>hrv_stopwords <span class="ot">&lt;-</span> <span class="fu">readLines</span>(<span class="st">&quot;stopwords-hr.txt&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>myCorpus <span class="ot">&lt;-</span> <span class="fu">tm_map</span>(myCorpus, removeWords, hrv_stopwords) </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>myCorpus<span class="sc">$</span>content</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot; zigaretten stecken  7000 verschiedene chemische substanzen darunter hunderte giftige  krebserregende stoffe  bekannteste nikotin  nervengift erhöht  blutdruck  herzfrequenz verengt  blutgefäße  reduziert  sauerstoffversorgung   schlecht   organe  ganz besonders    haut&quot;                                                                                                            
-[2] &quot; investments  immobilien  gute anlage ja   bauzinsen niedrig     objekt  gefragter lage befindet   zinsen  deutlich gestiegen  kaufpreise  topstandorten ohnehin trotzdem  kunden  internet gelockt immokauf  eigenkapital mache angeblich keinerlei probleme bild sprach   experten –  bauingenieur  projektentwickler  9 fehler  todsünden beim immobilienkauf    fehler   sparen   geld&quot;</code></pre>
+<pre><code>[1] &quot;  došao  genijalnu ideju – postupak  rješava najveći problem čovječanstva naime  ukloniti višak ugljikova dioksida  atmosfere   spasiti rodni  planet  uništenja  posvemašne propasti sav ugljikov dioksid treba kaže otopiti  vodi  dobivenu otopinu – sodavodu – piti  popiti  kombinaciji  vinom    činilo popularni gemišt  – špricer    trpjeti  pretrpjeti   posve uzaludno  – znamo – ugljikov dioksid  kadtad izaći   tijela   asimiliramo poput biljaka    vratiti  zrak&quot;
+[2] &quot;nova istraživanja pokazuju  igranje videoigara može povećati iq kod djece devetogodišnjaci   dvije godine igrali više  vršnjaka ostvarili  rast inteligencije  25 iq boda dok gledanje televizije  korištenje društvenih mreža  imale utjecaj&quot;                                                                                                                                                                                                                                    </code></pre>
 </div>
 </div>
-<section id="pregled-stop-riječi-za-engleski-jezik" class="level3">
-<h3 class="anchored" data-anchor-id="pregled-stop-riječi-za-engleski-jezik">Pregled stop riječi za engleski jezik</h3>
+<section id="pregled-stop-riječi-koje-se-nalaze-u-zasebnoj-datoteci" class="level3">
+<h3 class="anchored" data-anchor-id="pregled-stop-riječi-koje-se-nalaze-u-zasebnoj-datoteci">Pregled stop riječi koje se nalaze u zasebnoj datoteci</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stopwords</span>(<span class="at">kind =</span> <span class="st">&quot;german&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>hrv_stopwords</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  [1] &quot;aber&quot;      &quot;alle&quot;      &quot;allem&quot;     &quot;allen&quot;     &quot;aller&quot;     &quot;alles&quot;    
-  [7] &quot;als&quot;       &quot;also&quot;      &quot;am&quot;        &quot;an&quot;        &quot;ander&quot;     &quot;andere&quot;   
- [13] &quot;anderem&quot;   &quot;anderen&quot;   &quot;anderer&quot;   &quot;anderes&quot;   &quot;anderm&quot;    &quot;andern&quot;   
- [19] &quot;anderr&quot;    &quot;anders&quot;    &quot;auch&quot;      &quot;auf&quot;       &quot;aus&quot;       &quot;bei&quot;      
- [25] &quot;bin&quot;       &quot;bis&quot;       &quot;bist&quot;      &quot;da&quot;        &quot;damit&quot;     &quot;dann&quot;     
- [31] &quot;der&quot;       &quot;den&quot;       &quot;des&quot;       &quot;dem&quot;       &quot;die&quot;       &quot;das&quot;      
- [37] &quot;daß&quot;       &quot;derselbe&quot;  &quot;derselben&quot; &quot;denselben&quot; &quot;desselben&quot; &quot;demselben&quot;
- [43] &quot;dieselbe&quot;  &quot;dieselben&quot; &quot;dasselbe&quot;  &quot;dazu&quot;      &quot;dein&quot;      &quot;deine&quot;    
- [49] &quot;deinem&quot;    &quot;deinen&quot;    &quot;deiner&quot;    &quot;deines&quot;    &quot;denn&quot;      &quot;derer&quot;    
- [55] &quot;dessen&quot;    &quot;dich&quot;      &quot;dir&quot;       &quot;du&quot;        &quot;dies&quot;      &quot;diese&quot;    
- [61] &quot;diesem&quot;    &quot;diesen&quot;    &quot;dieser&quot;    &quot;dieses&quot;    &quot;doch&quot;      &quot;dort&quot;     
- [67] &quot;durch&quot;     &quot;ein&quot;       &quot;eine&quot;      &quot;einem&quot;     &quot;einen&quot;     &quot;einer&quot;    
- [73] &quot;eines&quot;     &quot;einig&quot;     &quot;einige&quot;    &quot;einigem&quot;   &quot;einigen&quot;   &quot;einiger&quot;  
- [79] &quot;einiges&quot;   &quot;einmal&quot;    &quot;er&quot;        &quot;ihn&quot;       &quot;ihm&quot;       &quot;es&quot;       
- [85] &quot;etwas&quot;     &quot;euer&quot;      &quot;eure&quot;      &quot;eurem&quot;     &quot;euren&quot;     &quot;eurer&quot;    
- [91] &quot;eures&quot;     &quot;für&quot;       &quot;gegen&quot;     &quot;gewesen&quot;   &quot;hab&quot;       &quot;habe&quot;     
- [97] &quot;haben&quot;     &quot;hat&quot;       &quot;hatte&quot;     &quot;hatten&quot;    &quot;hier&quot;      &quot;hin&quot;      
-[103] &quot;hinter&quot;    &quot;ich&quot;       &quot;mich&quot;      &quot;mir&quot;       &quot;ihr&quot;       &quot;ihre&quot;     
-[109] &quot;ihrem&quot;     &quot;ihren&quot;     &quot;ihrer&quot;     &quot;ihres&quot;     &quot;euch&quot;      &quot;im&quot;       
-[115] &quot;in&quot;        &quot;indem&quot;     &quot;ins&quot;       &quot;ist&quot;       &quot;jede&quot;      &quot;jedem&quot;    
-[121] &quot;jeden&quot;     &quot;jeder&quot;     &quot;jedes&quot;     &quot;jene&quot;      &quot;jenem&quot;     &quot;jenen&quot;    
-[127] &quot;jener&quot;     &quot;jenes&quot;     &quot;jetzt&quot;     &quot;kann&quot;      &quot;kein&quot;      &quot;keine&quot;    
-[133] &quot;keinem&quot;    &quot;keinen&quot;    &quot;keiner&quot;    &quot;keines&quot;    &quot;können&quot;    &quot;könnte&quot;   
-[139] &quot;machen&quot;    &quot;man&quot;       &quot;manche&quot;    &quot;manchem&quot;   &quot;manchen&quot;   &quot;mancher&quot;  
-[145] &quot;manches&quot;   &quot;mein&quot;      &quot;meine&quot;     &quot;meinem&quot;    &quot;meinen&quot;    &quot;meiner&quot;   
-[151] &quot;meines&quot;    &quot;mit&quot;       &quot;muss&quot;      &quot;musste&quot;    &quot;nach&quot;      &quot;nicht&quot;    
-[157] &quot;nichts&quot;    &quot;noch&quot;      &quot;nun&quot;       &quot;nur&quot;       &quot;ob&quot;        &quot;oder&quot;     
-[163] &quot;ohne&quot;      &quot;sehr&quot;      &quot;sein&quot;      &quot;seine&quot;     &quot;seinem&quot;    &quot;seinen&quot;   
-[169] &quot;seiner&quot;    &quot;seines&quot;    &quot;selbst&quot;    &quot;sich&quot;      &quot;sie&quot;       &quot;ihnen&quot;    
-[175] &quot;sind&quot;      &quot;so&quot;        &quot;solche&quot;    &quot;solchem&quot;   &quot;solchen&quot;   &quot;solcher&quot;  
-[181] &quot;solches&quot;   &quot;soll&quot;      &quot;sollte&quot;    &quot;sondern&quot;   &quot;sonst&quot;     &quot;über&quot;     
-[187] &quot;um&quot;        &quot;und&quot;       &quot;uns&quot;       &quot;unse&quot;      &quot;unsem&quot;     &quot;unsen&quot;    
-[193] &quot;unser&quot;     &quot;unses&quot;     &quot;unter&quot;     &quot;viel&quot;      &quot;vom&quot;       &quot;von&quot;      
-[199] &quot;vor&quot;       &quot;während&quot;   &quot;war&quot;       &quot;waren&quot;     &quot;warst&quot;     &quot;was&quot;      
-[205] &quot;weg&quot;       &quot;weil&quot;      &quot;weiter&quot;    &quot;welche&quot;    &quot;welchem&quot;   &quot;welchen&quot;  
-[211] &quot;welcher&quot;   &quot;welches&quot;   &quot;wenn&quot;      &quot;werde&quot;     &quot;werden&quot;    &quot;wie&quot;      
-[217] &quot;wieder&quot;    &quot;will&quot;      &quot;wir&quot;       &quot;wird&quot;      &quot;wirst&quot;     &quot;wo&quot;       
-[223] &quot;wollen&quot;    &quot;wollte&quot;    &quot;würde&quot;     &quot;würden&quot;    &quot;zu&quot;        &quot;zum&quot;      
-[229] &quot;zur&quot;       &quot;zwar&quot;      &quot;zwischen&quot; </code></pre>
+<pre><code>  [1] &quot;a&quot;       &quot;ako&quot;     &quot;ali&quot;     &quot;bi&quot;      &quot;bih&quot;     &quot;bila&quot;    &quot;bili&quot;   
+  [8] &quot;bilo&quot;    &quot;bio&quot;     &quot;bismo&quot;   &quot;biste&quot;   &quot;biti&quot;    &quot;bumo&quot;    &quot;da&quot;     
+ [15] &quot;do&quot;      &quot;duž&quot;     &quot;ga&quot;      &quot;hoće&quot;    &quot;hoćemo&quot;  &quot;hoćete&quot;  &quot;hoćeš&quot;  
+ [22] &quot;hoću&quot;    &quot;i&quot;       &quot;iako&quot;    &quot;ih&quot;      &quot;ili&quot;     &quot;iz&quot;      &quot;ja&quot;     
+ [29] &quot;je&quot;      &quot;jedna&quot;   &quot;jedne&quot;   &quot;jedno&quot;   &quot;jer&quot;     &quot;jesam&quot;   &quot;jesi&quot;   
+ [36] &quot;jesmo&quot;   &quot;jest&quot;    &quot;jeste&quot;   &quot;jesu&quot;    &quot;jim&quot;     &quot;joj&quot;     &quot;još&quot;    
+ [43] &quot;ju&quot;      &quot;kada&quot;    &quot;kako&quot;    &quot;kao&quot;     &quot;koja&quot;    &quot;koje&quot;    &quot;koji&quot;   
+ [50] &quot;kojima&quot;  &quot;koju&quot;    &quot;kroz&quot;    &quot;li&quot;      &quot;me&quot;      &quot;mene&quot;    &quot;meni&quot;   
+ [57] &quot;mi&quot;      &quot;mimo&quot;    &quot;moj&quot;     &quot;moja&quot;    &quot;moje&quot;    &quot;mu&quot;      &quot;na&quot;     
+ [64] &quot;nad&quot;     &quot;nakon&quot;   &quot;nam&quot;     &quot;nama&quot;    &quot;nas&quot;     &quot;naš&quot;     &quot;naša&quot;   
+ [71] &quot;naše&quot;    &quot;našeg&quot;   &quot;ne&quot;      &quot;nego&quot;    &quot;neka&quot;    &quot;neki&quot;    &quot;nekog&quot;  
+ [78] &quot;neku&quot;    &quot;nema&quot;    &quot;netko&quot;   &quot;neće&quot;    &quot;nećemo&quot;  &quot;nećete&quot;  &quot;nećeš&quot;  
+ [85] &quot;neću&quot;    &quot;nešto&quot;   &quot;ni&quot;      &quot;nije&quot;    &quot;nikoga&quot;  &quot;nikoje&quot;  &quot;nikoju&quot; 
+ [92] &quot;nisam&quot;   &quot;nisi&quot;    &quot;nismo&quot;   &quot;niste&quot;   &quot;nisu&quot;    &quot;njega&quot;   &quot;njegov&quot; 
+ [99] &quot;njegova&quot; &quot;njegovo&quot; &quot;njemu&quot;   &quot;njezin&quot;  &quot;njezina&quot; &quot;njezino&quot; &quot;njih&quot;   
+[106] &quot;njihov&quot;  &quot;njihova&quot; &quot;njihovo&quot; &quot;njim&quot;    &quot;njima&quot;   &quot;njoj&quot;    &quot;nju&quot;    
+[113] &quot;no&quot;      &quot;o&quot;       &quot;od&quot;      &quot;odmah&quot;   &quot;on&quot;      &quot;ona&quot;     &quot;oni&quot;    
+[120] &quot;ono&quot;     &quot;ova&quot;     &quot;pa&quot;      &quot;pak&quot;     &quot;po&quot;      &quot;pod&quot;     &quot;pored&quot;  
+[127] &quot;prije&quot;   &quot;s&quot;       &quot;sa&quot;      &quot;sam&quot;     &quot;samo&quot;    &quot;se&quot;      &quot;sebe&quot;   
+[134] &quot;sebi&quot;    &quot;si&quot;      &quot;smo&quot;     &quot;ste&quot;     &quot;su&quot;      &quot;sve&quot;     &quot;svi&quot;    
+[141] &quot;svog&quot;    &quot;svoj&quot;    &quot;svoja&quot;   &quot;svoje&quot;   &quot;svom&quot;    &quot;ta&quot;      &quot;tada&quot;   
+[148] &quot;taj&quot;     &quot;tako&quot;    &quot;te&quot;      &quot;tebe&quot;    &quot;tebi&quot;    &quot;ti&quot;      &quot;to&quot;     
+[155] &quot;toj&quot;     &quot;tome&quot;    &quot;tu&quot;      &quot;tvoj&quot;    &quot;tvoja&quot;   &quot;tvoje&quot;   &quot;u&quot;      
+[162] &quot;uz&quot;      &quot;vam&quot;     &quot;vama&quot;    &quot;vas&quot;     &quot;vaš&quot;     &quot;vaša&quot;    &quot;vaše&quot;   
+[169] &quot;već&quot;     &quot;vi&quot;      &quot;vrlo&quot;    &quot;za&quot;      &quot;zar&quot;     &quot;će&quot;      &quot;ćemo&quot;   
+[176] &quot;ćete&quot;    &quot;ćeš&quot;     &quot;ću&quot;      &quot;što&quot;    </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#dodavanje vlastitih stop-riječi</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#myCorpus &lt;- tm_map(myCorpus, removeWords, c(&quot;ohne&quot;))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="obrada-teksta-44-krnjenje" class="level2">
 <h2 class="anchored" data-anchor-id="obrada-teksta-44-krnjenje">Obrada teksta (4/4): Krnjenje</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>myCorpus <span class="ot">&lt;-</span> <span class="fu">tm_map</span>(myCorpus, stemDocument)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Rezultat: Tekst prilagođen za pretraživanje</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>myCorpus<span class="sc">$</span>content</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>myCorpus <span class="ot">&lt;-</span> <span class="fu">tm_map</span>(myCorpus, stemDocument)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Rezultat: Tekst prilagođen za pretraživanje</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Uočite da krnjenje s ovom narednom ne funkcionira ispravno za hrvatski jezik. </span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>myCorpus<span class="sc">$</span>content</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;zigaretten stecken 7000 verschieden chemisch substanzen darunt hundert giftig krebserregend stoff bekanntest nikotin nervengift erhöht blutdruck herzfrequenz verengt blutgefäß reduziert sauerstoffversorgung schlecht organ ganz besond haut&quot;                                                                                              
-[2] &quot;invest immobilien gute anlag ja bauzinsen niedrig objekt gefragt lage befindet zinsen deutlich gestiegen kaufpreis topstandorten ohnehin trotzdem kunden internet gelockt immokauf eigenkapit mach angeblich keinerlei problem bild sprach experten – bauingenieur projektentwickl 9 fehler todsünden beim immobilienkauf fehler sparen geld&quot;</code></pre>
+<pre><code>[1] &quot;došao genijalnu ideju – postupak rješava najveći problem čovječanstva naim uklon višak ugljikova dioksida atmosfer spasiti rodni planet uništenja posvemašn propasti sav ugljikov dioksid treba kaže otop vodi dobivenu otopinu – sodavodu – piti popiti kombinaciji vinom činilo popularni gemišt – špricer trpjeti pretrpjeti posv uzaludno – znamo – ugljikov dioksid kadtad izaći tijela asimiliramo poput biljaka vratiti zrak&quot;
+[2] &quot;nova istraživanja pokazuju igranj videoigara može povećati iq kod djece devetogodišnjaci dvije godin igrali više vršnjaka ostvarili rast inteligencij 25 iq boda dok gledanj televizij korištenj društvenih mreža imal utjecaj&quot;                                                                                                                                                                                                     </code></pre>
 </div>
 </div>
 </section>
 <section id="izrada-obrnute-datoteke-indeksa" class="level2">
 <h2 class="anchored" data-anchor-id="izrada-obrnute-datoteke-indeksa">Izrada obrnute datoteke / indeksa</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>tdm <span class="ot">&lt;-</span> <span class="fu">TermDocumentMatrix</span>(myCorpus)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>tdm <span class="ot">&lt;-</span> <span class="fu">tidy</span>(tdm)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>tdm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>tdm <span class="ot">&lt;-</span> <span class="fu">TermDocumentMatrix</span>(myCorpus)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>tdm <span class="ot">&lt;-</span> <span class="fu">tidy</span>(tdm)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>tdm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -3292,322 +3281,397 @@ UseMethod(&quot;text&quot;)
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">7000</td>
+<td style="text-align: left;">asimiliramo</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">bekanntest</td>
+<td style="text-align: left;">atmosfer</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">besond</td>
+<td style="text-align: left;">biljaka</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">blutdruck</td>
+<td style="text-align: left;">dioksid</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">blutgefäß</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">chemisch</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">darunt</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">erhöht</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">ganz</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">giftig</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">haut</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">herzfrequenz</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">hundert</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">krebserregend</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">nervengift</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">nikotin</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">organ</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">reduziert</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">sauerstoffversorgung</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">schlecht</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">stecken</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">stoff</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">substanzen</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">verengt</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">verschieden</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">zigaretten</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">angeblich</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">anlag</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">bauingenieur</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">bauzinsen</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">befindet</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">beim</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">bild</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">deutlich</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">eigenkapit</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">experten</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">fehler</td>
-<td style="text-align: left;">2</td>
 <td style="text-align: right;">2</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">gefragt</td>
-<td style="text-align: left;">2</td>
-<td style="text-align: right;">1</td>
-</tr>
 <tr class="odd">
-<td style="text-align: left;">geld</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">dioksida</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">gelockt</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">dobivenu</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">gestiegen</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">došao</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">gute</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">gemišt</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">immobilien</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">genijalnu</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">immobilienkauf</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">ideju</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">immokauf</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">izaći</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">internet</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">kadtad</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">invest</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">kaže</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">kaufpreis</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">kombinaciji</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">keinerlei</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">naim</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">kunden</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">najveći</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">lage</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">otop</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">mach</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">otopinu</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">niedrig</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">piti</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">objekt</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">planet</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">ohnehin</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">popiti</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">popularni</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">poput</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">postupak</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">posv</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">posvemašn</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">pretrpjeti</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">problem</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">projektentwickl</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">propasti</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">sparen</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">rješava</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">sprach</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">rodni</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">todsünden</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">sav</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">topstandorten</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">sodavodu</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">trotzdem</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">spasiti</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">zinsen</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">tijela</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">treba</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">trpjeti</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ugljikov</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ugljikova</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">uklon</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">uništenja</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">uzaludno</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vinom</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">višak</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vodi</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">vratiti</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">znamo</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">zrak</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">činilo</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">čovječanstva</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">špricer</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">–</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">boda</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">devetogodišnjaci</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">djece</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dok</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">društvenih</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dvije</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">gledanj</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">godin</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">igrali</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">igranj</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">imal</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">inteligencij</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">istraživanja</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">kod</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">korištenj</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">može</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mreža</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">nova</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ostvarili</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pokazuju</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">povećati</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">rast</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">televizij</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">utjecaj</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">videoigara</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">više</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vršnjaka</td>
 <td style="text-align: left;">2</td>
 <td style="text-align: right;">1</td>
 </tr>
@@ -3615,11 +3679,11 @@ UseMethod(&quot;text&quot;)
 </table>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sortirana obrnuta datoteka</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>tdm <span class="ot">&lt;-</span> tdm <span class="sc">%&gt;%</span> <span class="fu">select</span>(term, document) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(term)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>tdm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sortirana obrnuta datoteka</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>tdm <span class="ot">&lt;-</span> tdm <span class="sc">%&gt;%</span> <span class="fu">select</span>(term, document) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(term)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>tdm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -3631,260 +3695,320 @@ UseMethod(&quot;text&quot;)
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">7000</td>
+<td style="text-align: left;">asimiliramo</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">angeblich</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">anlag</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">bauingenieur</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">bauzinsen</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">befindet</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">beim</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">bekanntest</td>
+<td style="text-align: left;">atmosfer</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">besond</td>
+<td style="text-align: left;">biljaka</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">bild</td>
+<td style="text-align: left;">boda</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">blutdruck</td>
-<td style="text-align: left;">1</td>
+<td style="text-align: left;">devetogodišnjaci</td>
+<td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">blutgefäß</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">chemisch</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">darunt</td>
+<td style="text-align: left;">dioksid</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">deutlich</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">eigenkapit</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">erhöht</td>
+<td style="text-align: left;">dioksida</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">experten</td>
+<td style="text-align: left;">djece</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">fehler</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">ganz</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">gefragt</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">geld</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">gelockt</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">gestiegen</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">giftig</td>
+<td style="text-align: left;">dobivenu</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">gute</td>
+<td style="text-align: left;">dok</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">haut</td>
+<td style="text-align: left;">došao</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">herzfrequenz</td>
+<td style="text-align: left;">društvenih</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dvije</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">gemišt</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">hundert</td>
+<td style="text-align: left;">genijalnu</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">immobilien</td>
+<td style="text-align: left;">gledanj</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">immobilienkauf</td>
+<td style="text-align: left;">godin</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">immokauf</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">ideju</td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">internet</td>
+<td style="text-align: left;">igrali</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">invest</td>
+<td style="text-align: left;">igranj</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">kaufpreis</td>
+<td style="text-align: left;">imal</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">keinerlei</td>
+<td style="text-align: left;">inteligencij</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">krebserregend</td>
+<td style="text-align: left;">istraživanja</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">izaći</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">kadtad</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">kunden</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">kaže</td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">lage</td>
+<td style="text-align: left;">kod</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">mach</td>
+<td style="text-align: left;">kombinaciji</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">korištenj</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">može</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">nervengift</td>
+<td style="text-align: left;">mreža</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">naim</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">najveći</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">niedrig</td>
+<td style="text-align: left;">nova</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">nikotin</td>
+<td style="text-align: left;">ostvarili</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">otop</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">otopinu</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">objekt</td>
+<td style="text-align: left;">piti</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">planet</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pokazuju</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">ohnehin</td>
+<td style="text-align: left;">popiti</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">popularni</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">poput</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">postupak</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">posv</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">posvemašn</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">povećati</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">organ</td>
+<td style="text-align: left;">pretrpjeti</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">problem</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">projektentwickl</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">reduziert</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">sauerstoffversorgung</td>
+<td style="text-align: left;">propasti</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">schlecht</td>
-<td style="text-align: left;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">sparen</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">sprach</td>
+<td style="text-align: left;">rast</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">stecken</td>
+<td style="text-align: left;">rješava</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">stoff</td>
+<td style="text-align: left;">rodni</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">substanzen</td>
+<td style="text-align: left;">sav</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">todsünden</td>
+<td style="text-align: left;">sodavodu</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">spasiti</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">televizij</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">topstandorten</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">trotzdem</td>
-<td style="text-align: left;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">verengt</td>
+<td style="text-align: left;">tijela</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">verschieden</td>
+<td style="text-align: left;">treba</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">zigaretten</td>
+<td style="text-align: left;">trpjeti</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">zinsen</td>
+<td style="text-align: left;">ugljikov</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ugljikova</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">uklon</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">uništenja</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">utjecaj</td>
 <td style="text-align: left;">2</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">uzaludno</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">videoigara</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">vinom</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">višak</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">više</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vodi</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">vratiti</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">vršnjaka</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">znamo</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">zrak</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">činilo</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">čovječanstva</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">špricer</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">–</td>
-<td style="text-align: left;">2</td>
+<td style="text-align: left;">1</td>
 </tr>
 </tbody>
 </table>
@@ -3895,54 +4019,22 @@ UseMethod(&quot;text&quot;)
 <section id="matrica-pojavljivanja-bez-dodavanja-težine" class="level2">
 <h2 class="anchored" data-anchor-id="matrica-pojavljivanja-bez-dodavanja-težine">Matrica pojavljivanja: Bez dodavanja težine</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>dtm <span class="ot">&lt;-</span> <span class="fu">DocumentTermMatrix</span>(myCorpus)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>dtm <span class="ot">&lt;-</span> <span class="fu">tidy</span>(dtm)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>dtm <span class="ot">&lt;-</span> dtm <span class="sc">%&gt;%</span> </span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(document, <span class="at">names_from =</span> term, <span class="at">values_from =</span> term,</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">values_fn =</span> length, <span class="at">values_fill =</span> <span class="dv">0</span>)</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>dtm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>dtm <span class="ot">&lt;-</span> <span class="fu">DocumentTermMatrix</span>(myCorpus)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>dtm <span class="ot">&lt;-</span> <span class="fu">tidy</span>(dtm)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>dtm <span class="ot">&lt;-</span> dtm <span class="sc">%&gt;%</span> </span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(document, <span class="at">names_from =</span> term, <span class="at">values_from =</span> term,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">values_fn =</span> length, <span class="at">values_fill =</span> <span class="dv">0</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>dtm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 1%">
-<col style="width: 0%">
 <col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 0%">
-<col style="width: 1%">
-<col style="width: 0%">
-<col style="width: 2%">
-<col style="width: 1%">
-<col style="width: 2%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 3%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 2%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 2%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 0%">
-<col style="width: 0%">
 <col style="width: 1%">
 <col style="width: 1%">
 <col style="width: 1%">
@@ -3952,9 +4044,21 @@ UseMethod(&quot;text&quot;)
 <col style="width: 1%">
 <col style="width: 1%">
 <col style="width: 0%">
+<col style="width: 0%">
 <col style="width: 1%">
-<col style="width: 2%">
+<col style="width: 0%">
 <col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
 <col style="width: 1%">
 <col style="width: 1%">
 <col style="width: 1%">
@@ -3965,83 +4069,133 @@ UseMethod(&quot;text&quot;)
 <col style="width: 1%">
 <col style="width: 1%">
 <col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
 <col style="width: 1%">
 <col style="width: 2%">
 <col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
 <col style="width: 2%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
 <col style="width: 1%">
 <col style="width: 1%">
 <col style="width: 0%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">document</th>
-<th style="text-align: right;">7000</th>
-<th style="text-align: right;">bekanntest</th>
-<th style="text-align: right;">besond</th>
-<th style="text-align: right;">blutdruck</th>
-<th style="text-align: right;">blutgefäß</th>
-<th style="text-align: right;">chemisch</th>
-<th style="text-align: right;">darunt</th>
-<th style="text-align: right;">erhöht</th>
-<th style="text-align: right;">ganz</th>
-<th style="text-align: right;">giftig</th>
-<th style="text-align: right;">haut</th>
-<th style="text-align: right;">herzfrequenz</th>
-<th style="text-align: right;">hundert</th>
-<th style="text-align: right;">krebserregend</th>
-<th style="text-align: right;">nervengift</th>
-<th style="text-align: right;">nikotin</th>
-<th style="text-align: right;">organ</th>
-<th style="text-align: right;">reduziert</th>
-<th style="text-align: right;">sauerstoffversorgung</th>
-<th style="text-align: right;">schlecht</th>
-<th style="text-align: right;">stecken</th>
-<th style="text-align: right;">stoff</th>
-<th style="text-align: right;">substanzen</th>
-<th style="text-align: right;">verengt</th>
-<th style="text-align: right;">verschieden</th>
-<th style="text-align: right;">zigaretten</th>
-<th style="text-align: right;">angeblich</th>
-<th style="text-align: right;">anlag</th>
-<th style="text-align: right;">bauingenieur</th>
-<th style="text-align: right;">bauzinsen</th>
-<th style="text-align: right;">befindet</th>
-<th style="text-align: right;">beim</th>
-<th style="text-align: right;">bild</th>
-<th style="text-align: right;">deutlich</th>
-<th style="text-align: right;">eigenkapit</th>
-<th style="text-align: right;">experten</th>
-<th style="text-align: right;">fehler</th>
-<th style="text-align: right;">gefragt</th>
-<th style="text-align: right;">geld</th>
-<th style="text-align: right;">gelockt</th>
-<th style="text-align: right;">gestiegen</th>
-<th style="text-align: right;">gute</th>
-<th style="text-align: right;">immobilien</th>
-<th style="text-align: right;">immobilienkauf</th>
-<th style="text-align: right;">immokauf</th>
-<th style="text-align: right;">internet</th>
-<th style="text-align: right;">invest</th>
-<th style="text-align: right;">kaufpreis</th>
-<th style="text-align: right;">keinerlei</th>
-<th style="text-align: right;">kunden</th>
-<th style="text-align: right;">lage</th>
-<th style="text-align: right;">mach</th>
-<th style="text-align: right;">niedrig</th>
-<th style="text-align: right;">objekt</th>
-<th style="text-align: right;">ohnehin</th>
+<th style="text-align: right;">asimiliramo</th>
+<th style="text-align: right;">atmosfer</th>
+<th style="text-align: right;">biljaka</th>
+<th style="text-align: right;">dioksid</th>
+<th style="text-align: right;">dioksida</th>
+<th style="text-align: right;">dobivenu</th>
+<th style="text-align: right;">došao</th>
+<th style="text-align: right;">gemišt</th>
+<th style="text-align: right;">genijalnu</th>
+<th style="text-align: right;">ideju</th>
+<th style="text-align: right;">izaći</th>
+<th style="text-align: right;">kadtad</th>
+<th style="text-align: right;">kaže</th>
+<th style="text-align: right;">kombinaciji</th>
+<th style="text-align: right;">naim</th>
+<th style="text-align: right;">najveći</th>
+<th style="text-align: right;">otop</th>
+<th style="text-align: right;">otopinu</th>
+<th style="text-align: right;">piti</th>
+<th style="text-align: right;">planet</th>
+<th style="text-align: right;">popiti</th>
+<th style="text-align: right;">popularni</th>
+<th style="text-align: right;">poput</th>
+<th style="text-align: right;">postupak</th>
+<th style="text-align: right;">posv</th>
+<th style="text-align: right;">posvemašn</th>
+<th style="text-align: right;">pretrpjeti</th>
 <th style="text-align: right;">problem</th>
-<th style="text-align: right;">projektentwickl</th>
-<th style="text-align: right;">sparen</th>
-<th style="text-align: right;">sprach</th>
-<th style="text-align: right;">todsünden</th>
-<th style="text-align: right;">topstandorten</th>
-<th style="text-align: right;">trotzdem</th>
-<th style="text-align: right;">zinsen</th>
+<th style="text-align: right;">propasti</th>
+<th style="text-align: right;">rješava</th>
+<th style="text-align: right;">rodni</th>
+<th style="text-align: right;">sav</th>
+<th style="text-align: right;">sodavodu</th>
+<th style="text-align: right;">spasiti</th>
+<th style="text-align: right;">tijela</th>
+<th style="text-align: right;">treba</th>
+<th style="text-align: right;">trpjeti</th>
+<th style="text-align: right;">ugljikov</th>
+<th style="text-align: right;">ugljikova</th>
+<th style="text-align: right;">uklon</th>
+<th style="text-align: right;">uništenja</th>
+<th style="text-align: right;">uzaludno</th>
+<th style="text-align: right;">vinom</th>
+<th style="text-align: right;">višak</th>
+<th style="text-align: right;">vodi</th>
+<th style="text-align: right;">vratiti</th>
+<th style="text-align: right;">znamo</th>
+<th style="text-align: right;">zrak</th>
+<th style="text-align: right;">činilo</th>
+<th style="text-align: right;">čovječanstva</th>
+<th style="text-align: right;">špricer</th>
 <th style="text-align: right;">–</th>
+<th style="text-align: right;">boda</th>
+<th style="text-align: right;">devetogodišnjaci</th>
+<th style="text-align: right;">djece</th>
+<th style="text-align: right;">dok</th>
+<th style="text-align: right;">društvenih</th>
+<th style="text-align: right;">dvije</th>
+<th style="text-align: right;">gledanj</th>
+<th style="text-align: right;">godin</th>
+<th style="text-align: right;">igrali</th>
+<th style="text-align: right;">igranj</th>
+<th style="text-align: right;">imal</th>
+<th style="text-align: right;">inteligencij</th>
+<th style="text-align: right;">istraživanja</th>
+<th style="text-align: right;">kod</th>
+<th style="text-align: right;">korištenj</th>
+<th style="text-align: right;">može</th>
+<th style="text-align: right;">mreža</th>
+<th style="text-align: right;">nova</th>
+<th style="text-align: right;">ostvarili</th>
+<th style="text-align: right;">pokazuju</th>
+<th style="text-align: right;">povećati</th>
+<th style="text-align: right;">rast</th>
+<th style="text-align: right;">televizij</th>
+<th style="text-align: right;">utjecaj</th>
+<th style="text-align: right;">videoigara</th>
+<th style="text-align: right;">više</th>
+<th style="text-align: right;">vršnjaka</th>
 </tr>
 </thead>
 <tbody>
@@ -4073,17 +4227,32 @@ UseMethod(&quot;text&quot;)
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
@@ -4140,17 +4309,32 @@ UseMethod(&quot;text&quot;)
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
@@ -4188,52 +4372,20 @@ UseMethod(&quot;text&quot;)
 <section id="matrica-pojavljivanja-davanje-težine-frekvencijom-termina-tf" class="level2">
 <h2 class="anchored" data-anchor-id="matrica-pojavljivanja-davanje-težine-frekvencijom-termina-tf">Matrica pojavljivanja: Davanje težine frekvencijom termina (tf)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>dtm_tf <span class="ot">&lt;-</span> <span class="fu">DocumentTermMatrix</span>(myCorpus)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>dtm_tf <span class="ot">&lt;-</span> <span class="fu">tidy</span>(dtm_tf)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>dtm_tf <span class="ot">&lt;-</span> dtm_tf <span class="sc">%&gt;%</span> </span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(document, <span class="at">names_from =</span> term, <span class="at">values_from =</span> count,</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">values_fill =</span> <span class="dv">0</span>)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>dtm_tf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>dtm_tf <span class="ot">&lt;-</span> <span class="fu">DocumentTermMatrix</span>(myCorpus)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>dtm_tf <span class="ot">&lt;-</span> <span class="fu">tidy</span>(dtm_tf)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>dtm_tf <span class="ot">&lt;-</span> dtm_tf <span class="sc">%&gt;%</span> </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(document, <span class="at">names_from =</span> term, <span class="at">values_from =</span> count,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">values_fill =</span> <span class="dv">0</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>dtm_tf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 1%">
-<col style="width: 0%">
 <col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 0%">
-<col style="width: 1%">
-<col style="width: 0%">
-<col style="width: 2%">
-<col style="width: 1%">
-<col style="width: 2%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 3%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 2%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 2%">
-<col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 0%">
-<col style="width: 0%">
 <col style="width: 1%">
 <col style="width: 1%">
 <col style="width: 1%">
@@ -4243,9 +4395,21 @@ UseMethod(&quot;text&quot;)
 <col style="width: 1%">
 <col style="width: 1%">
 <col style="width: 0%">
+<col style="width: 0%">
 <col style="width: 1%">
-<col style="width: 2%">
+<col style="width: 0%">
 <col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
 <col style="width: 1%">
 <col style="width: 1%">
 <col style="width: 1%">
@@ -4256,83 +4420,133 @@ UseMethod(&quot;text&quot;)
 <col style="width: 1%">
 <col style="width: 1%">
 <col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
 <col style="width: 1%">
 <col style="width: 2%">
 <col style="width: 1%">
-<col style="width: 1%">
-<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
 <col style="width: 2%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
 <col style="width: 1%">
 <col style="width: 1%">
 <col style="width: 0%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 1%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">document</th>
-<th style="text-align: right;">7000</th>
-<th style="text-align: right;">bekanntest</th>
-<th style="text-align: right;">besond</th>
-<th style="text-align: right;">blutdruck</th>
-<th style="text-align: right;">blutgefäß</th>
-<th style="text-align: right;">chemisch</th>
-<th style="text-align: right;">darunt</th>
-<th style="text-align: right;">erhöht</th>
-<th style="text-align: right;">ganz</th>
-<th style="text-align: right;">giftig</th>
-<th style="text-align: right;">haut</th>
-<th style="text-align: right;">herzfrequenz</th>
-<th style="text-align: right;">hundert</th>
-<th style="text-align: right;">krebserregend</th>
-<th style="text-align: right;">nervengift</th>
-<th style="text-align: right;">nikotin</th>
-<th style="text-align: right;">organ</th>
-<th style="text-align: right;">reduziert</th>
-<th style="text-align: right;">sauerstoffversorgung</th>
-<th style="text-align: right;">schlecht</th>
-<th style="text-align: right;">stecken</th>
-<th style="text-align: right;">stoff</th>
-<th style="text-align: right;">substanzen</th>
-<th style="text-align: right;">verengt</th>
-<th style="text-align: right;">verschieden</th>
-<th style="text-align: right;">zigaretten</th>
-<th style="text-align: right;">angeblich</th>
-<th style="text-align: right;">anlag</th>
-<th style="text-align: right;">bauingenieur</th>
-<th style="text-align: right;">bauzinsen</th>
-<th style="text-align: right;">befindet</th>
-<th style="text-align: right;">beim</th>
-<th style="text-align: right;">bild</th>
-<th style="text-align: right;">deutlich</th>
-<th style="text-align: right;">eigenkapit</th>
-<th style="text-align: right;">experten</th>
-<th style="text-align: right;">fehler</th>
-<th style="text-align: right;">gefragt</th>
-<th style="text-align: right;">geld</th>
-<th style="text-align: right;">gelockt</th>
-<th style="text-align: right;">gestiegen</th>
-<th style="text-align: right;">gute</th>
-<th style="text-align: right;">immobilien</th>
-<th style="text-align: right;">immobilienkauf</th>
-<th style="text-align: right;">immokauf</th>
-<th style="text-align: right;">internet</th>
-<th style="text-align: right;">invest</th>
-<th style="text-align: right;">kaufpreis</th>
-<th style="text-align: right;">keinerlei</th>
-<th style="text-align: right;">kunden</th>
-<th style="text-align: right;">lage</th>
-<th style="text-align: right;">mach</th>
-<th style="text-align: right;">niedrig</th>
-<th style="text-align: right;">objekt</th>
-<th style="text-align: right;">ohnehin</th>
+<th style="text-align: right;">asimiliramo</th>
+<th style="text-align: right;">atmosfer</th>
+<th style="text-align: right;">biljaka</th>
+<th style="text-align: right;">dioksid</th>
+<th style="text-align: right;">dioksida</th>
+<th style="text-align: right;">dobivenu</th>
+<th style="text-align: right;">došao</th>
+<th style="text-align: right;">gemišt</th>
+<th style="text-align: right;">genijalnu</th>
+<th style="text-align: right;">ideju</th>
+<th style="text-align: right;">izaći</th>
+<th style="text-align: right;">kadtad</th>
+<th style="text-align: right;">kaže</th>
+<th style="text-align: right;">kombinaciji</th>
+<th style="text-align: right;">naim</th>
+<th style="text-align: right;">najveći</th>
+<th style="text-align: right;">otop</th>
+<th style="text-align: right;">otopinu</th>
+<th style="text-align: right;">piti</th>
+<th style="text-align: right;">planet</th>
+<th style="text-align: right;">popiti</th>
+<th style="text-align: right;">popularni</th>
+<th style="text-align: right;">poput</th>
+<th style="text-align: right;">postupak</th>
+<th style="text-align: right;">posv</th>
+<th style="text-align: right;">posvemašn</th>
+<th style="text-align: right;">pretrpjeti</th>
 <th style="text-align: right;">problem</th>
-<th style="text-align: right;">projektentwickl</th>
-<th style="text-align: right;">sparen</th>
-<th style="text-align: right;">sprach</th>
-<th style="text-align: right;">todsünden</th>
-<th style="text-align: right;">topstandorten</th>
-<th style="text-align: right;">trotzdem</th>
-<th style="text-align: right;">zinsen</th>
+<th style="text-align: right;">propasti</th>
+<th style="text-align: right;">rješava</th>
+<th style="text-align: right;">rodni</th>
+<th style="text-align: right;">sav</th>
+<th style="text-align: right;">sodavodu</th>
+<th style="text-align: right;">spasiti</th>
+<th style="text-align: right;">tijela</th>
+<th style="text-align: right;">treba</th>
+<th style="text-align: right;">trpjeti</th>
+<th style="text-align: right;">ugljikov</th>
+<th style="text-align: right;">ugljikova</th>
+<th style="text-align: right;">uklon</th>
+<th style="text-align: right;">uništenja</th>
+<th style="text-align: right;">uzaludno</th>
+<th style="text-align: right;">vinom</th>
+<th style="text-align: right;">višak</th>
+<th style="text-align: right;">vodi</th>
+<th style="text-align: right;">vratiti</th>
+<th style="text-align: right;">znamo</th>
+<th style="text-align: right;">zrak</th>
+<th style="text-align: right;">činilo</th>
+<th style="text-align: right;">čovječanstva</th>
+<th style="text-align: right;">špricer</th>
 <th style="text-align: right;">–</th>
+<th style="text-align: right;">boda</th>
+<th style="text-align: right;">devetogodišnjaci</th>
+<th style="text-align: right;">djece</th>
+<th style="text-align: right;">dok</th>
+<th style="text-align: right;">društvenih</th>
+<th style="text-align: right;">dvije</th>
+<th style="text-align: right;">gledanj</th>
+<th style="text-align: right;">godin</th>
+<th style="text-align: right;">igrali</th>
+<th style="text-align: right;">igranj</th>
+<th style="text-align: right;">imal</th>
+<th style="text-align: right;">inteligencij</th>
+<th style="text-align: right;">istraživanja</th>
+<th style="text-align: right;">kod</th>
+<th style="text-align: right;">korištenj</th>
+<th style="text-align: right;">može</th>
+<th style="text-align: right;">mreža</th>
+<th style="text-align: right;">nova</th>
+<th style="text-align: right;">ostvarili</th>
+<th style="text-align: right;">pokazuju</th>
+<th style="text-align: right;">povećati</th>
+<th style="text-align: right;">rast</th>
+<th style="text-align: right;">televizij</th>
+<th style="text-align: right;">utjecaj</th>
+<th style="text-align: right;">videoigara</th>
+<th style="text-align: right;">više</th>
+<th style="text-align: right;">vršnjaka</th>
 </tr>
 </thead>
 <tbody>
@@ -4341,6 +4555,7 @@ UseMethod(&quot;text&quot;)
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
@@ -4364,17 +4579,31 @@ UseMethod(&quot;text&quot;)
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
@@ -4431,17 +4660,32 @@ UseMethod(&quot;text&quot;)
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
@@ -4476,29 +4720,29 @@ UseMethod(&quot;text&quot;)
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>dtm_fun <span class="ot">&lt;-</span> <span class="fu">DocumentTermMatrix</span>(myCorpus)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect</span>(dtm_fun)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>dtm_fun <span class="ot">&lt;-</span> <span class="fu">DocumentTermMatrix</span>(myCorpus)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">inspect</span>(dtm_fun)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;&lt;DocumentTermMatrix (documents: 2, terms: 64)&gt;&gt;
-Non-/sparse entries: 64/64
+<pre><code>&lt;&lt;DocumentTermMatrix (documents: 2, terms: 79)&gt;&gt;
+Non-/sparse entries: 79/79
 Sparsity           : 50%
-Maximal term length: 20
+Maximal term length: 16
 Weighting          : term frequency (tf)
 Sample             :
     Terms
-Docs 7000 bekanntest besond blutdruck blutgefäß chemisch darunt erhöht fehler
-   1    1          1      1         1         1        1      1      1      0
-   2    0          0      0         0         0        0      0      0      2
+Docs – asimiliramo atmosfer biljaka dioksid dioksida dobivenu došao gemišt
+   1 6           1        1       1       2        1        1     1      1
+   2 0           0        0       0       0        0        0     0      0
     Terms
-Docs ganz
-   1    1
-   2    0</code></pre>
+Docs ugljikov
+   1        2
+   2        0</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#primjer određivanja funkcije težine</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>dtm_fun <span class="ot">&lt;-</span> <span class="fu">DocumentTermMatrix</span>(myCorpus,</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">control =</span> <span class="fu">list</span>(<span class="at">weighting =</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>                                         <span class="cf">function</span>(x)</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>                                         <span class="fu">weightTfIdf</span>(x, <span class="at">normalize =</span> <span class="cn">FALSE</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#primjer određivanja funkcije težine</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>dtm_fun <span class="ot">&lt;-</span> <span class="fu">DocumentTermMatrix</span>(myCorpus,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">control =</span> <span class="fu">list</span>(<span class="at">weighting =</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>                                         <span class="cf">function</span>(x)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>                                         <span class="fu">weightTfIdf</span>(x, <span class="at">normalize =</span> <span class="cn">FALSE</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section" class="level2">

@@ -2,7 +2,8 @@
 title: "Obrada teksta u programskom jeziku R"
 format: 
   revealjs:
-    theme: dark
+    embed-resources: true
+    theme: night
 editor: visual
 author: Sabina Rako
 slide-number: true
@@ -32,17 +33,15 @@ date: 12.16.2024.
 
     ![](images/cover.png){width="96"}
 
-## Primjer 1
-
-Postupak obrade teksta
-
 ## Upute za isprobavanje rada u R-u
-
--   preuzmite datotetke s <https://shorturl.at/hiL16>
 
 -   u *web*-pregledniku otvorite adresu <https://login.posit.cloud/> i prijavite se (korisnički račun Google)
 
--   <https://github.com/SabinaRa/ObradaTekstaR>
+-   novi projekt preko repozitorija u GitHubu: <https://github.com/SabinaRa/ObradaTekstaR>
+
+## Primjeri 1a, 1b i 1c
+
+Postupak obrade teksta
 
 ## Primjer 2
 

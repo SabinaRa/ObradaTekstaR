@@ -101,7 +101,7 @@ myCorpus$content
 
 ```
 
-### Pregled stop riječi koje se nalaze u zasebnoj datoteci 
+### Pregled stop riječi koje se nalaze u zasebnoj datoteci
 
 ```{r}
 #| echo: true
