@@ -1,0 +1,108 @@
+---
+title: "Obrada teksta u programskom jeziku R"
+format: 
+  html:
+    df-print: paged
+    embed-resources: true
+  
+editor: visual
+author: Sabina Rako
+---
+
+## Učitavanje paketa za obradu teksta
+
+```{r}
+#| echo: true
+#| warning: false
+ 
+
+library(udpipe)
+library(textrank)
+library(rmdformats)
+library(tidyverse)
+library(readxl)
+library(heatmaply)
+library(igraph)
+library(ggraph)
+library(ggplot2)
+library(lattice)
+```
+
+## Učitavanje podataka
+
+```{r}
+#| echo: true
+#| warning: false
+
+data <- read_excel("./data/rezultati.xlsx")
+
+# Prednosti kombiniranog učenja
+Benefits <- as.data.frame(data$`Benefits of BL`)  %>% mutate(id = row_number()) %>% rename(Benefits = 1)
+
+```
+
+## Označavanje teksta
+
+```{r}
+#| echo: true
+#| warning: false
+
+ud_model <- udpipe_download_model(language = "croatian")
+ud_model <- udpipe_load_model(ud_model$file_model)
+
+x <- udpipe_annotate(ud_model, x = Benefits$Benefits, doc_id = Benefits$id)
+oznacenTekstBen <- as.data.frame(x)
+
+oznacenTekstBen
+```
+
+## Razlika između *stem* i *lemma*
+
+![](images/stemvslemma.webp)
+
+Izvor: bealdung.com
+
+## Analiza po vrstama riječi
+
+```{r}
+#| echo: true
+#| warning: false
+
+stats <- txt_freq(oznacenTekstBen$upos)
+stats$key <- factor(stats$key, levels = rev(stats$key))
+barchart(key ~ freq, data = stats, col = "cadetblue", 
+         main = "Pojavnost vrsta riječi", 
+         xlab = "Frekvencija")
+```
+
+```{r}
+#| echo: true
+#| warning: false
+## Imenice
+stats <- subset(oznacenTekstBen, upos %in% c("NOUN")) 
+stats <- txt_freq(stats$lemma)
+stats$key <- factor(stats$key, levels = rev(stats$key))
+barchart(key ~ freq, data = head(stats, 20), col = "cadetblue", 
+         main = "Najčešće imenice", xlab = "Freq")
+
+```
+
+## Vizualizacija supojavnosti pojmova
+
+```{r}
+#| echo: true
+#| warning: false
+## Co-occurrences: Koliko često riječi slijede jedna drugu (uz preskok dvije riječi koje se nalaze između)?
+stats <- cooccurrence(x = oznacenTekstBen$token, 
+                      relevant = oznacenTekstBen$upos %in% c("NOUN", "ADJ", "VERB"), skipgram = c(2,3))
+
+
+wordnetwork <- head(stats, 30)
+wordnetwork <- graph_from_data_frame(wordnetwork)
+
+ggraph(wordnetwork, layout = "fr") +
+  geom_edge_link(aes(width = cooc, edge_alpha = cooc), edge_colour = "dark green") +
+  geom_node_text(aes(label = name), col = "black", size = 4) +
+  theme(legend.position = "none") +
+  labs(title = "Prepoznate prednosti", subtitle = "")
+```

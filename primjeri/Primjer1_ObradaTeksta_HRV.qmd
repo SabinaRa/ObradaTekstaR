@@ -1,0 +1,197 @@
+---
+title: "Obrada teksta u programskom jeziku R"
+format: 
+  html:
+    df-print: kable
+    embed-resources: true
+  
+editor: visual
+author: Sabina Rako
+---
+
+## Učitavanje paketa za obradu teksta
+
+Prije pokretanja analize potrebno je učitati potrebne pakete.
+
+```{r}
+#| echo: true
+#| warning: false
+ 
+library(tm)
+library(tidytext)
+library(dplyr)
+library(tibble)
+library(tidyverse)
+```
+
+## Unos teksta
+
+U ovom primjeru obradit ćemo dva "dokumenta". Tekstovi su pohranjeni u varijablu pod nazivom **text**. Izvor tekstova: <https://www.monitor.hr/>
+
+```{r}
+#| echo: true
+#| warning: false
+
+text_hrv <- c("Netko je došao na genijalnu ideju – postupak koji rješava najveći problem čovječanstva, naime kako ukloniti višak ugljikova dioksida iz atmosfere te tako spasiti rodni nam planet od uništenja, od posvemašne propasti. Sav ugljikov dioksid treba, kaže, otopiti u vodi, a dobivenu otopinu – soda-vodu – piti i popiti! U kombinaciji s vinom, što ne bi činilo popularni gemišt, već – špricer! No, tako što trpjeti i pretrpjeti bilo bi posve uzaludno, jer – znamo – ugljikov dioksid će kad-tad izaći iz našeg tijela (jer ne asimiliramo poput biljaka), pa će se vratiti u zrak.", "Nova istraživanja pokazuju da igranje videoigara može povećati IQ kod djece. Devetogodišnjaci koji su dvije godine igrali više od vršnjaka ostvarili su rast inteligencije od 2,5 IQ boda, dok gledanje televizije i korištenje društvenih mreža nisu imale utjecaj.")
+```
+
+Tekst koji je spremljen u varijablu **text** izgleda ovako:
+
+```{r}
+#| echo: true
+#| warning: false
+text
+```
+
+## Priprema teksta
+
+Da bi se lakše moglo obrađivati tekst potrebno ga je prebaciti u tablični format (engl. *data frame*).
+
+```{r}
+#| echo: true
+#| warning: false
+
+text_df <- tibble(doc = 1:2, text = text_hrv)
+```
+
+Tekst pohranjen u tabličnom formatu sada izgleda ovako:
+
+```{r}
+#| echo: true
+#| warning: false
+text_df
+```
+
+## Obrada teksta (1/4): Mala početna slova
+
+```{r}
+#| echo: true
+#| warning: false
+
+myCorpus <- Corpus(VectorSource(text_df$text))
+
+myCorpus <- tm_map(myCorpus, tolower)  
+
+myCorpus$content
+
+```
+
+## Obrada teksta (2/4): Uklanjanje interpunkcijskih znakova
+
+```{r}
+#| echo: true
+#| warning: false
+
+myCorpus <- tm_map(myCorpus, removePunctuation)
+
+myCorpus$content
+```
+
+## Obrada teksta (3/4): Uklanjanje stop riječi
+
+```{r}
+#| echo: true
+#| warning: false
+
+hrv_stopwords <- readLines("stopwords-hr.txt", encoding="UTF-8")
+
+
+myCorpus <- tm_map(myCorpus, removeWords, hrv_stopwords) 
+myCorpus$content
+
+```
+
+### Pregled stop riječi koje se nalaze u zasebnoj datoteci 
+
+```{r}
+#| echo: true
+#| warning: false
+#| 
+hrv_stopwords
+
+
+```
+
+## Obrada teksta (4/4): Krnjenje
+
+```{r}
+#| echo: true
+#| warning: false
+
+myCorpus <- tm_map(myCorpus, stemDocument)
+
+#Rezultat: Tekst prilagođen za pretraživanje
+#Uočite da krnjenje s ovom narednom ne funkcionira ispravno za hrvatski jezik. 
+
+myCorpus$content
+```
+
+## Izrada obrnute datoteke / indeksa
+
+```{r}
+#| echo: true
+#| warning: false
+
+tdm <- TermDocumentMatrix(myCorpus)
+tdm <- tidy(tdm)
+
+tdm
+
+# sortirana obrnuta datoteka
+
+tdm <- tdm %>% select(term, document) %>% arrange(term)
+
+tdm
+
+```
+
+## Matrica pojavljivanja: Bez dodavanja težine
+
+```{r}
+#| echo: true
+#| warning: false
+
+dtm <- DocumentTermMatrix(myCorpus)
+dtm <- tidy(dtm)
+
+dtm <- dtm %>% 
+
+  pivot_wider(document, names_from = term, values_from = term,
+
+       values_fn = length, values_fill = 0)
+
+dtm
+
+```
+
+## Matrica pojavljivanja: Davanje težine frekvencijom termina (tf)
+
+```{r}
+#| echo: true
+#| warning: false
+
+dtm_tf <- DocumentTermMatrix(myCorpus)
+dtm_tf <- tidy(dtm_tf)
+
+dtm_tf <- dtm_tf %>% 
+  pivot_wider(document, names_from = term, values_from = count,
+       values_fill = 0)
+
+dtm_tf
+```
+
+```{r}
+#| echo: true
+#| warning: false
+
+dtm_fun <- DocumentTermMatrix(myCorpus)
+inspect(dtm_fun)
+
+#primjer određivanja funkcije težine
+dtm_fun <- DocumentTermMatrix(myCorpus,
+                              control = list(weighting =
+                                         function(x)
+                                         weightTfIdf(x, normalize = FALSE)))
+```
+
+## 

@@ -1,0 +1,195 @@
+---
+title: "Obrada teksta u programskom jeziku R"
+format: 
+  html:
+    df-print: kable
+    embed-resources: true
+  
+editor: visual
+author: Sabina Rako
+---
+
+## Učitavanje paketa za obradu teksta
+
+Prije pokretanja analize potrebno je učitati potrebne pakete.
+
+```{r}
+#| echo: true
+#| warning: false
+ 
+library(tm)
+library(tidytext)
+library(dplyr)
+library(tibble)
+library(tidyverse)
+```
+
+## Unos teksta
+
+U ovom primjeru obradit ćemo dva "dokumenta". Tekstovi su pohranjeni u varijablu pod nazivom **text**. Izvor tekstova: <https://www.bild.de/>
+
+```{r}
+#| echo: true
+#| warning: false
+
+text_deu <- c("In Zigaretten stecken über 7000 verschiedene chemische Substanzen. Darunter Hunderte giftige und krebserregende Stoffe. Der bekannteste: Nikotin. Das Nervengift erhöht den Blutdruck, die Herzfrequenz, verengt die Blutgefäße und reduziert die Sauerstoff-Versorgung. Das ist schlecht für alle Organe, aber ganz besonders auch für die Haut.", "Sind Investments in Immobilien eine gute Anlage? Ja, wenn die Bauzinsen niedrig sind und sich das Objekt in gefragter Lage befindet. Doch die Zinsen sind deutlich gestiegen, die Kaufpreise an Top-Standorten ohnehin. Trotzdem werden Kunden im Internet gelockt: Immo-Kauf ohne Eigenkapital mache angeblich keinerlei Probleme. BILD sprach mit einem Experten – ein Bauingenieur und Projektentwickler: Diese 9 Fehler sind Todsünden beim Immobilien-Kauf. Wenn Sie diese Fehler nicht machen, sparen Sie viel Geld.")
+```
+
+Tekst koji je spremljen u varijablu **text** izgleda ovako:
+
+```{r}
+#| echo: true
+#| warning: false
+text
+```
+
+## Priprema teksta
+
+Da bi se lakše moglo obrađivati tekst potrebno ga je prebaciti u tablični format (engl. *data frame*).
+
+```{r}
+#| echo: true
+#| warning: false
+
+text_df <- tibble(doc = 1:2, text = text_deu)
+```
+
+Tekst pohranjen u tabličnom formatu sada izgleda ovako:
+
+```{r}
+#| echo: true
+#| warning: false
+text_df
+```
+
+## Obrada teksta (1/4): Mala početna slova
+
+```{r}
+#| echo: true
+#| warning: false
+
+myCorpus <- Corpus(VectorSource(text_df$text))
+
+myCorpus <- tm_map(myCorpus, tolower)  
+
+myCorpus$content
+
+```
+
+## Obrada teksta (2/4): Uklanjanje interpunkcijskih znakova
+
+```{r}
+#| echo: true
+#| warning: false
+
+myCorpus <- tm_map(myCorpus, removePunctuation)
+
+myCorpus$content
+```
+
+## Obrada teksta (3/4): Uklanjanje stop riječi
+
+```{r}
+#| echo: true
+#| warning: false
+
+myCorpus <- tm_map(myCorpus, removeWords, stopwords("german")) 
+myCorpus$content
+
+```
+
+### Pregled stop riječi za njemački jezik
+
+```{r}
+#| echo: true
+#| warning: false
+#| 
+stopwords(kind = "german")
+
+#dodavanje vlastitih stop-riječi
+#myCorpus <- tm_map(myCorpus, removeWords, c("ohne"))
+
+```
+
+## Obrada teksta (4/4): Krnjenje
+
+```{r}
+#| echo: true
+#| warning: false
+
+myCorpus <- tm_map(myCorpus, stemDocument)
+
+#Rezultat: Tekst prilagođen za pretraživanje
+
+myCorpus$content
+```
+
+## Izrada obrnute datoteke / indeksa
+
+```{r}
+#| echo: true
+#| warning: false
+
+tdm <- TermDocumentMatrix(myCorpus)
+tdm <- tidy(tdm)
+
+tdm
+
+# sortirana obrnuta datoteka
+
+tdm <- tdm %>% select(term, document) %>% arrange(term)
+
+tdm
+
+```
+
+## Matrica pojavljivanja: Bez dodavanja težine
+
+```{r}
+#| echo: true
+#| warning: false
+
+dtm <- DocumentTermMatrix(myCorpus)
+dtm <- tidy(dtm)
+
+dtm <- dtm %>% 
+
+  pivot_wider(document, names_from = term, values_from = term,
+
+       values_fn = length, values_fill = 0)
+
+dtm
+
+```
+
+## Matrica pojavljivanja: Davanje težine frekvencijom termina (tf)
+
+```{r}
+#| echo: true
+#| warning: false
+
+dtm_tf <- DocumentTermMatrix(myCorpus)
+dtm_tf <- tidy(dtm_tf)
+
+dtm_tf <- dtm_tf %>% 
+  pivot_wider(document, names_from = term, values_from = count,
+       values_fill = 0)
+
+dtm_tf
+```
+
+```{r}
+#| echo: true
+#| warning: false
+
+dtm_fun <- DocumentTermMatrix(myCorpus)
+inspect(dtm_fun)
+
+#primjer određivanja funkcije težine
+dtm_fun <- DocumentTermMatrix(myCorpus,
+                              control = list(weighting =
+                                         function(x)
+                                         weightTfIdf(x, normalize = FALSE)))
+```
+
+## 

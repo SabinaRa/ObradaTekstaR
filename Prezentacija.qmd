@@ -1,0 +1,57 @@
+---
+title: "Obrada teksta u programskom jeziku R"
+format: 
+  revealjs:
+    theme: dark
+editor: visual
+author: Sabina Rako
+slide-number: true
+
+date: 12.16.2024.
+---
+
+## Sadržaj
+
+-   Ukratko o programskom jeziku R
+
+-   Primjer 1: Postupak obrade teksta
+
+-   Primjer 2: Obrada teksta na hrvatskom jeziku
+
+-   Prilike za učenje R-a
+
+## Programski jezik R
+
+-   otvoreni programski kod
+
+-   moguće ga je preuzeti s web-stranice <https://www.r-project.org/>
+
+-   integrirano razvojno okruženje (RStudio IDE) <https://posit.co/>
+
+-   knjiga "Text Mining with R" (besplatna), dostupna na <https://www.tidytextmining.com/>
+
+    ![](images/cover.png){width="96"}
+
+## Primjer 1
+
+Postupak obrade teksta
+
+## Upute za isprobavanje rada u R-u
+
+-   preuzmite datotetke s <https://shorturl.at/hiL16>
+
+-   u *web*-pregledniku otvorite adresu <https://login.posit.cloud/> i prijavite se (korisnički račun Google)
+
+-   <https://github.com/SabinaRa/ObradaTekstaR>
+
+## Primjer 2
+
+Obrada teksta na hrvatskom jeziku
+
+## Prilike za učenje R-a
+
+-   tečajevi u organizaciji Sveučilišnog računskog centra Sveučilišta u Zagrebu (dostupni i online tečajevi za samostalno učenje i online tečajevi uz vodstvo predavača [https://www.srce.unizg.hr/edu/](https://www.srce.unizg.hr/edu/programiranje)
+
+-   knjiga "R for Data Science" <https://r4ds.hadley.nz> (besplatna), dostupno drugo izdanje od 2023.
+
+-   niz uputa i tečajeva (Google: "introduction to R")
